@@ -4,17 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:User_Scaner"
+        xmlns:sp="clr-namespace:User_Scaner.Widok"
         mc:Ignorable="d"
         Title="Skaner Userów" Height="600" Width="400">
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+
+    <StackPanel >
+
         <Menu Background="BlanchedAlmond" Height="20" VerticalAlignment="Top">
             <MenuItem Header="Opcje">
                 <MenuItem Header="Edycja listy" FontWeight="Bold" Click="MenuItem_Click"/>
             </MenuItem>
-            <StackPanel x:Name="stack">
-            </StackPanel>
         </Menu>
-
-    </ScrollViewer>
-
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="500">
+            <StackPanel x:Name="stack"/>
+        </ScrollViewer>
+    </StackPanel>
 </Window>

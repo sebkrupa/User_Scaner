@@ -109,7 +109,7 @@ namespace User_Scaner
             try
             {
                 pinger = new Ping();
-                PingReply reply = pinger.Send(hostName,3000);
+                PingReply reply = pinger.Send(hostName,1500);
                 pingable = reply.Status == IPStatus.Success;
             }
             catch(PingException ee)
