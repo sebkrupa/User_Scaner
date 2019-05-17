@@ -71,6 +71,10 @@ namespace User_Scaner
             users.Add(new User() { hostName = "zywlap044", nazwa = "Tomek Harężlak" });
             users.Add(new User() { hostName = "zywlap034", nazwa = "Dawid Holisz" });
             users.Add(new User() { hostName = "zywwks035", nazwa = "KIOSK TIPS" });
+            users.Add(new User() { hostName = "zywlap011", nazwa = "Dawid Holisz" });
+            users.Add(new User() { hostName = "zywlap014", nazwa = "Kadry - laptop" });
+
+
 
         }
 
