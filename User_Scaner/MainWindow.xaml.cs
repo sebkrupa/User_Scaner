@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.NetworkInformation;
 using System.Threading;
+using System.Net;
 
 namespace User_Scaner
 {
@@ -71,8 +72,6 @@ namespace User_Scaner
             users.Add(new User() { hostName = "zywlap034", nazwa = "Dawid Holisz" });
             users.Add(new User() { hostName = "zywwks035", nazwa = "KIOSK TIPS" });
 
-
-
         }
 
         private void Skanuj()
@@ -116,7 +115,7 @@ namespace User_Scaner
             try
             {
                 pinger = new Ping();
-                PingReply reply = pinger.Send(hostName,300);
+                PingReply reply = pinger.Send(hostName,3000);
                 pingable = reply.Status == IPStatus.Success;
             }
             catch(PingException ee)
@@ -142,14 +141,50 @@ namespace User_Scaner
                 block.Width = Double.NaN;
                 block.Height = 20;
                 block.Margin = new Thickness(10);
-                block.Text = user.ToString();
                 if (!status)
+                {
+                    block.Text = user.ToString();
                     block.Background = Brushes.IndianRed;
+                }
                 else
-                    block.Background = Brushes.LightGreen;
+                {
+                    IPHostEntry ipHost = System.Net.Dns.GetHostEntry(user.hostName);
+                    IPAddress[] addr = ipHost.AddressList;
+                    string ip = addr[addr.Length - 1].ToString();
+                    string zaklad = ktoryZaklad(addr[addr.Length - 1].ToString());
+
+
+                    block.Text = user.ToString() + "______" + zaklad + "--- " + ip ;
+                    if (zaklad != "Wieprz")
+                        block.Background = Brushes.LightBlue;
+                    else
+                        block.Background = Brushes.LightGreen;
+
+                }
+
+
 
                 stack.Children.Add(block);
             }));
+        }
+
+        private string ktoryZaklad(string ip)
+        {
+            string[] adres = ip.Split('.');
+            int fragment = Convert.ToInt16(adres[2]);
+            string zaklad = string.Empty;
+            if (fragment >= 80 && fragment <= 90)
+                zaklad = "Wieprz";
+            else if (fragment >= 48 && fragment <= 60)
+                zaklad = "Wyszków";
+            else if (fragment >= 16 && fragment <= 28)
+                zaklad = "Bielsko";
+            else if (fragment >= 0 && fragment <= 12)
+                zaklad = "Wapienica";
+            else
+                zaklad = "NIEZNANY";
+
+            return zaklad;
         }
 
     }
