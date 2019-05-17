@@ -7,8 +7,14 @@
         mc:Ignorable="d"
         Title="Skaner Userów" Height="600" Width="400">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <StackPanel x:Name="stack">
-        </StackPanel>
+        <Menu Background="BlanchedAlmond" Height="20" VerticalAlignment="Top">
+            <MenuItem Header="Opcje">
+                <MenuItem Header="Edycja listy" FontWeight="Bold" Click="MenuItem_Click"/>
+            </MenuItem>
+            <StackPanel x:Name="stack">
+            </StackPanel>
+        </Menu>
+
     </ScrollViewer>
 
 </Window>

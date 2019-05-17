@@ -1,20 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Net.NetworkInformation;
 using System.Threading;
 using System.Net;
+using User_Scaner.Model;
 
 namespace User_Scaner
 {
@@ -31,7 +24,7 @@ namespace User_Scaner
             Rozpocznij();
         }
 
-        private void Rozpocznij()
+        public void Rozpocznij()
         {
             users.Clear();
             stack.Children.Clear();
@@ -71,11 +64,8 @@ namespace User_Scaner
             users.Add(new User() { hostName = "zywlap044", nazwa = "Tomek Harężlak" });
             users.Add(new User() { hostName = "zywlap034", nazwa = "Dawid Holisz" });
             users.Add(new User() { hostName = "zywwks035", nazwa = "KIOSK TIPS" });
-            users.Add(new User() { hostName = "zywlap011", nazwa = "Dawid Holisz" });
+            users.Add(new User() { hostName = "zywlap011", nazwa = "Marcin Jędrzejko" });
             users.Add(new User() { hostName = "zywlap014", nazwa = "Kadry - laptop" });
-
-
-
         }
 
         private void Skanuj()
@@ -191,16 +181,9 @@ namespace User_Scaner
             return zaklad;
         }
 
-    }
-
-    public class User
-    {
-        public string hostName { get; set; }
-        public string nazwa { get; set; }
-
-        public override string ToString()
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            return $"{hostName}" + " - " + $"{nazwa}";
+
         }
     }
 }
