@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User_Scaner", "User_Scaner\User_Scaner.csproj", "{BD485662-C349-47FF-A7A1-7B12707E220D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD485662-C349-47FF-A7A1-7B12707E220D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD485662-C349-47FF-A7A1-7B12707E220D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD485662-C349-47FF-A7A1-7B12707E220D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD485662-C349-47FF-A7A1-7B12707E220D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC4D1458-2128-4D11-8A79-C2819E218FC5}
+	EndGlobalSection
+EndGlobal
